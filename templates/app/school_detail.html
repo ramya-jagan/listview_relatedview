@@ -9,11 +9,11 @@
 {% block body_block %}
 
 <center>
-  <h1>Detail Information of {{schlobject.sname}}</h1>
-  <h2>Name of the the school is {{schlobject.name}}</h2>
-  <h2>principal ofthe school is {{schlobject.sprincipal}}</h2>
-  <h2>location of the school is {{schlobject.slocation}}</h2>
-  <
+  <h1>Detail Information of {{sclobject.sname}}</h1>
+  <h2>Name of the the school is {{sclobject.sname}}</h2>
+  <h2>principal ofthe school is {{sclobject.sprincipal}}</h2>
+  <h2>location of the school is {{sclobject.slocation}}</h2>
+  
 
 <h1>Student Detail Are</h1>  
 <table border="2px">
@@ -22,11 +22,16 @@
     <th>Student Age </th>
   </tr>
 
-  {% for st in schlobject.students.all %}
+  {% for st in sclobject.students.all %}
   <tr>
      <td>{{st.stname}}</td>
      <td>{{st.sage}}</td>
   </tr>
   {% endfor %}
+
 </table>
+<a href="{% url 'SchoolUpdate' pk=sclobject.pk   %}" class="btn btn-danger">SchoolUpdate</a>
+
+
 </center>
+{% endblock %}

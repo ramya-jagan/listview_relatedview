@@ -1,5 +1,7 @@
 from django.db import models
 
+from django.urls import reverse
+
 # Create your models here.
 class School(models.Model):
   sname=models.CharField(max_length=50)
