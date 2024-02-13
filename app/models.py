@@ -6,6 +6,12 @@ class School(models.Model):
   sprincipal=models.CharField(max_length=50)
   slocation=models.CharField(max_length=50)
 
+  def  get_absolute_url(self):
+    return reverse('schooldetail',kwargs={'pk':self.pk}) 
+
+  def __str__(self):
+    return self.sname  
+
 
 class Student(models.Model):
   stname=models.CharField(max_length=50)
